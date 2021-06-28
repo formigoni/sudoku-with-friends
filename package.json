@@ -2,7 +2,7 @@
   "name": "sudoku-with-friends",
   "version": "0.0.1",
   "engines": {
-  	"node": "10.16.0"	
+    "node": "10.16.0"
   },
   "description": "Collaborate on the new york times sudoku.",
   "dependencies": {

@@ -432,7 +432,7 @@ Grid.prototype.show_selected = function(data) {
 	currently_selected = this.other_selected.get(data.color);
 	currently_selected.other_players_selected.push(data.color);
 	document.getElementById(this.other_selected.get(data.color).id()).classList.add("other-selected");
-	document.getElementById(currently_selected.id() + '-other-selected').style.outline = `2px dashed ${data.color}8e`;
+	document.getElementById(currently_selected.id() + '-other-selected').style.outline = `4px dashed ${data.color}8e`;
 
 }
 
