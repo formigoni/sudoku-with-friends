@@ -504,24 +504,35 @@ socket.on('set up board', board => {
 	}
 
 	document.addEventListener('keydown', function(event) {
-		let f = MODE == NORMAL_MODE ? grid.set_digit : grid.set_candidate;
-		if (event.code == "Digit1") 
+		//console.log(event.code);
+		let isNumpad = ((event.code == "Numpad1") ||
+			(event.code == "Numpad2") ||
+			(event.code == "Numpad3") ||
+			(event.code == "Numpad4") ||
+			(event.code == "Numpad5") ||
+			(event.code == "Numpad6") ||
+			(event.code == "Numpad7") ||
+			(event.code == "Numpad8") ||
+			(event.code == "Numpad9") ||
+			(event.code == "Numpad0"));
+		let f = ((MODE == NORMAL_MODE) && (!isNumpad)) ? grid.set_digit : grid.set_candidate;
+		if ((event.code == "Digit1") || (event.code == "Numpad1"))
 			f.call(grid, 1);
-		else if (event.code == "Digit2")
+		else if ((event.code == "Digit2") || (event.code == "Numpad2"))
 			f.call(grid, 2);
-		else if (event.code == "Digit3")
+		else if ((event.code == "Digit3") || (event.code == "Numpad3"))
 			f.call(grid, 3);
-		else if (event.code == "Digit4")
+		else if ((event.code == "Digit4") || (event.code == "Numpad4"))
 			f.call(grid, 4);
-		else if (event.code == "Digit5")
+		else if ((event.code == "Digit5") || (event.code == "Numpad5"))
 			f.call(grid, 5);
-		else if (event.code == "Digit6")
+		else if ((event.code == "Digit6") || (event.code == "Numpad6"))
 			f.call(grid, 6);
-		else if (event.code == "Digit7")
+		else if ((event.code == "Digit7") || (event.code == "Numpad7"))
 			f.call(grid, 7);
-		else if (event.code == "Digit8")
+		else if ((event.code == "Digit8") || (event.code == "Numpad8"))
 			f.call(grid, 8);
-		else if (event.code == "Digit9")
+		else if ((event.code == "Digit9") || (event.code == "Numpad9"))
 			f.call(grid, 9);
 		else if (event.code == "Backspace" || event.code == "Delete")
 			grid.set_digit(0);
