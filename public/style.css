@@ -86,7 +86,7 @@ body {
 	width: 100%;
 	height: 100%;
 	outline-offset: -4px;
-	animation: blinker 600ms linear infinite;
+	/*animation: blinker 1200ms linear infinite;*/
 }
 
 #board {
