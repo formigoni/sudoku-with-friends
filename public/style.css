@@ -159,11 +159,14 @@ body {
 }
 
 #timer {
-	width: 100%;
+	width: fit-content;
 	margin-bottom: 8px;
+	margin: auto;
 	display: none;
 }
-#timer-value {
+
+#timer div {
+	display: inline;
 	text-align: center;
 	font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }

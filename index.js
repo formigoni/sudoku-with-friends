@@ -198,6 +198,8 @@ io.on('connection', (socket) => {
 	});
 });
 
+setInterval(() => io.emit('time', new Date().toTimeString()), 10000);
+
 http.listen(port, () => {
 });
 

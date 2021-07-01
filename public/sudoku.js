@@ -449,6 +449,11 @@ if (window.location.pathname.startsWith("/room/")) {
 	socket.emit("join room", window.location.pathname.slice(6));
 }
 
+socket.on('time', function(timeString) {
+	el = document.getElementById('server-time')
+	el.innerHTML = 'Server time: ' + timeString;
+  });
+  
 socket.on('set up board', board => {
 	if (window.location.pathname.slice(6) != board.id.toString()) {
 		window.history.pushState({}, null, `/room/${board.id}`);
@@ -479,7 +484,7 @@ socket.on('set up board', board => {
 				let newTimeStr = Math.floor(minutes).toString().padStart(2, "0")+':'+Math.floor(seconds).toString().padStart(2, "0");
 				if (newTimeStr != timeStr) {
 					timeStr = newTimeStr;
-					document.getElementById("timer-value").innerText = timeStr;
+					document.getElementById("timer-value").innerText = 'Time: ' + timeStr;
 				}
 			}, 100);
 		}
